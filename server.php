@@ -3,7 +3,7 @@
     $text = $_GET['chapter'];
     $ban = $_GET['bannedWord'];
 
-    var_dump($bannedWord);
+    $censored = str_replace($ban, '***', $text)
 
 ?>
 
@@ -15,12 +15,36 @@
     <title>Document</title>
 </head>
     <body>
-
         <h1>
-            Your text is:
+            Uncensored
         </h1>
+        <h2>
+            Uncensored text:
+        </h2>
         <p>
-            <?php echo $text; ?>
+            <?php echo $text; ?> 
+        </p>
+        <h3>
+            Letter count:
+        </h3>
+        <p>
+            <?php echo strlen($text);  ?>
+        </p>
+
+        <hr>
+
+        <h1>Censored</h1>
+        <h2>
+            Censored text:
+        </h2>
+        <p>
+            <?php echo $censored; ?> 
+        </p>
+        <h3>
+            Letter count:
+        </h3>
+        <p>
+            <?php echo strlen($censored);  ?>
         </p>
 
     </body>
